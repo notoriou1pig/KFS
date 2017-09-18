@@ -92,7 +92,7 @@ Description: A struct which hold a context</br>
 (registers, segment selectors, flags, #).
 
 
-int	(/*isr_handler)(struct regs* regs);
+int	(\*isr_handler)(struct regs* regs);
 
 Description: A pointer to an IRQ handler</br>
 Arguments:</br>
