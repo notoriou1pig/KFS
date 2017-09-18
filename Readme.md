@@ -1,10 +1,6 @@
 # Kernel Programming I - Kernel From Scratch
 ## Introduction
 
-Here is the assigments for Kernel Programming I - Kernel From Scratch.
-
-Subject: [KERNEL] LOGIN_X LOGIN_Y - KFS
-
 ## Hello World !
 
 The aim of this project is to get a basic build system for your own kernel.
@@ -26,8 +22,8 @@ The aim of this project is to get a basic build system for your own kernel.
       +-- Makefile<br/>
       +-- kfs.ld<br/>
       +-- src/<br/>
-          +-- crt0.S<br/>
-          +-- main.c<br/>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+-- crt0.S<br/>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+-- main.c<br/>
 
 ### You will learn:
       How VGA text-mode works
@@ -39,42 +35,37 @@ Corrections will take place in your computers.
 # Kernel Programming II - Kernel From Scratch
 ## Introduction
 
-Here is the assigments for Kernel Programming II - Kernel From Scratch.
-
-Subject: [KERNEL] LOGIN_X LOGIN_Y - KFS
-
-The specifications described below should be be considered as guidelines.
+The specifications described below should be be considered as guidelines.</br>
 This is not mandantory to perfectly fit this API but is highly recommended.
+
 ## Summary
 
-   Segmentation
-   Interrupts handling
-   Keyboard driver
-   Timer driver
+  1. Segmentation
+  2. Interrupts handling
+  3. Keyboard driver
+  4. Timer driver
 
 ## Segmentation
 ### Brief
 
-Firstly, you have to configure segmentation in order to get a flat memory
-model.
+Firstly, you have to configure segmentation in order to get a flat memory model.
 
-Reference: Intel Manual 3A Chapter 3
-File: src/segmentation.c
-Header: inc/segmentation.h
-MyFile: src/gdt.S
+Reference: Intel Manual 3A Chapter 3</br>
+File: src/segmentation.c</br>
+Header: inc/segmentation.h</br>
+MyFile: src/gdt.S</br>
 
 ### Functions
 
-int	set_gdt_entry(int n, uint32_t base, uint32_t limit,
-		      uint8_t access, uint8_t granularity);
+int	set_gdt_entry(int n, uint32_t base, uint32_t limit, uint8_t access, uint8_t granularity);
 
-Description: Set a GDT entry.
-Arguments:
-	n: entry index
-	base: segment base address
-	limit: segment limit
-	access: segment access attributes
-	granularity: segment limit granularity
+Description: Set a GDT entry.</br>
+Arguments:</br>
+	+ n: entry index
+	+ base: segment base address
+	+ limit: segment limit
+	+ access: segment access attributes
+	+ granularity: segment limit granularity
 
 void	init_flat_gdt(void)
 
