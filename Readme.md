@@ -26,8 +26,8 @@ The aim of this project is to get a basic build system for your own kernel.
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+-- main.c<br/>
 
 ### You will learn:
-      How VGA text-mode works
-      How 16550 UART chip works
++ How VGA text-mode works
++ How 16550 UART chip works
 
 ## Conclusion
 Corrections will take place in your computers.
@@ -61,21 +61,21 @@ int	set_gdt_entry(int n, uint32_t base, uint32_t limit, uint8_t access, uint8_t 
 
 Description: Set a GDT entry.</br>
 Arguments:</br>
-	+ n: entry index
-	+ base: segment base address
-	+ limit: segment limit
-	+ access: segment access attributes
-	+ granularity: segment limit granularity
++ n: entry index
++ base: segment base address
++ limit: segment limit
++ access: segment access attributes
++ granularity: segment limit granularity
 
-void	init_flat_gdt(void)
+void	init_flat_gdt(void);
 
-Description: This function sets a GDT in order to get a flat memory model.
-It must reloads the segment selectors according to the new GDT.
-A minimal GDT will be:
-  Null segment
-  Kernel code segment
-  Kernel data segment
-o
+Description: This function sets a GDT in order to get a flat memory model.</br>
+It must reloads the segment selectors according to the new GDT.</br>
+A minimal GDT will be:</br>
++ Null segment
++ Kernel code segment
++ Kernel data segment
+
 ## Interrupts
 ### Brief
 
