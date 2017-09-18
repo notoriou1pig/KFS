@@ -22,12 +22,17 @@ The aim of this project is to get a basic build system for your own kernel.
       + 1 stop bit
 
 3. Send us a tarball of the sources of your kernel:
-      + kfs-login_x
-      + +-- Makefile
-      + +-- kfs.ld
-      + +-- src/
-          ++ +-- crt0.S
-          ++ +-- main.c
+      kfs-login_x<br/>
+      +-- Makefile
+      
+      +-- kfs.ld
+      
+      +-- src/
+      
+          +-- crt0.S
+	  
+          +-- main.c
+	  
 
 ### You will learn:
       How VGA text-mode works
