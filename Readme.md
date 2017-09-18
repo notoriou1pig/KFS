@@ -21,18 +21,13 @@ The aim of this project is to get a basic build system for your own kernel.
       + No parity check
       + 1 stop bit
 
-3. Send us a tarball of the sources of your kernel:
+3. Send us a tarball of the sources of your kernel:<br/>
       kfs-login_x<br/>
-      +-- Makefile
-      
-      +-- kfs.ld
-      
-      +-- src/
-      
-          +-- crt0.S
-	  
-          +-- main.c
-	  
+      +-- Makefile<br/>
+      +-- kfs.ld<br/>
+      +-- src/<br/>
+          +-- crt0.S<br/>
+          +-- main.c<br/>
 
 ### You will learn:
       How VGA text-mode works
