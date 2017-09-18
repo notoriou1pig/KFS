@@ -11,11 +11,11 @@ The aim of this project is to get a basic build system for your own kernel.
 
 ### You must:
 + Write a Makefile with the following rules:
-      all: compile the kernel and the generate the ELF file.
-      boot: boot the kernel using Qemu or Bochs.
-      debug: boot the kernel and attach a gdb on it.
+  	all: compile the kernel and the generate the ELF file.
+	boot: boot the kernel using Qemu or Bochs.
+	debug: boot the kernel and attach a gdb on it.
 
-+Write a function void printk(const char *msg) which prints on the framebuffer and on the serial port with the following line protocol:
++ Write a function void printk(const char *msg) which prints on the framebuffer and on the serial port with the following line protocol:
       38400 bauds
       8 bits per word
       No parity check
