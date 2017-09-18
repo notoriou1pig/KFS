@@ -79,24 +79,24 @@ A minimal GDT will be:</br>
 ## Interrupts
 ### Brief
 
-In protected mode, interrupts are handled thanks to an Interrupt Descriptor Table.
-These functions allows the initialization of this structure.
-File: src/interrupts.c
-Header: inc/interrupts.h
+In protected mode, interrupts are handled thanks to an Interrupt Descriptor Table.</br>
+These functions allows the initialization of this structure.</br>
+File: src/interrupts.c</br>
+Header: inc/interrupts.h</br>
 
 ### Types
 
 struct	regs;
 
-Description: A struct which hold a context
+Description: A struct which hold a context</br>
 (registers, segment selectors, flags, #).
 
 
-int	(*isr_handler)(struct regs* regs);
+int	(/*isr_handler)(struct regs* regs);
 
-Description: A pointer to an IRQ handler
-Arguments:
-	regs: saved context
+Description: A pointer to an IRQ handler</br>
+Arguments:</br>
+	regs: saved context</br>
 
 ### Functions
 
