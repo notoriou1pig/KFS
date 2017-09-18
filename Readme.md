@@ -3,15 +3,14 @@
 
 Here is the assigments for Kernel Programming I - Kernel From Scratch.
 
-To: halfr@lse.epita.fr, surply@lse.epita.fr`
 Subject: [KERNEL] LOGIN_X LOGIN_Y - KFS
 
 ## Hello World !
 
 The aim of this project is to get a basic build system for your own kernel.
 
-###You must:
-+Write a Makefile with the following rules:
+### You must:
++ Write a Makefile with the following rules:
       all: compile the kernel and the generate the ELF file.
       boot: boot the kernel using Qemu or Bochs.
       debug: boot the kernel and attach a gdb on it.
@@ -30,32 +29,31 @@ The aim of this project is to get a basic build system for your own kernel.
           +-- crt0.S
           +-- main.c
 
-###You will learn:
+### You will learn:
       How VGA text-mode works
       How 16550 UART chip works
 
-##Conclusion
+## Conclusion
 Corrections will take place in your computers.
 
-#Kernel Programming II - Kernel From Scratch
-##Introduction
+# Kernel Programming II - Kernel From Scratch
+## Introduction
 
 Here is the assigments for Kernel Programming II - Kernel From Scratch.
 
-To: halfr@lse.epita.fr, surply@lse.epita.fr
 Subject: [KERNEL] LOGIN_X LOGIN_Y - KFS
 
 The specifications described below should be be considered as guidelines.
 This is not mandantory to perfectly fit this API but is highly recommended.
-##Summary
+## Summary
 
    Segmentation
    Interrupts handling
    Keyboard driver
    Timer driver
 
-##Segmentation
-###Brief
+## Segmentation
+### Brief
 
 Firstly, you have to configure segmentation in order to get a flat memory
 model.
@@ -65,7 +63,7 @@ File: src/segmentation.c
 Header: inc/segmentation.h
 MyFile: src/gdt.S
 
-###Functions
+### Functions
 
 int	set_gdt_entry(int n, uint32_t base, uint32_t limit,
 		      uint8_t access, uint8_t granularity);
@@ -87,15 +85,15 @@ A minimal GDT will be:
   Kernel code segment
   Kernel data segment
 o
-##Interrupts
-###Brief
+## Interrupts
+### Brief
 
 In protected mode, interrupts are handled thanks to an Interrupt Descriptor Table.
 These functions allows the initialization of this structure.
 File: src/interrupts.c
 Header: inc/interrupts.h
 
-###Types
+### Types
 
 struct	regs;
 
@@ -109,7 +107,7 @@ Description: A pointer to an IRQ handler
 Arguments:
 	regs: saved context
 
-###Functions
+### Functions
 
 void	interrupts_init(void);
 
@@ -127,8 +125,8 @@ Arguments:
         flags:
               ISR_USER: the user can call it
 
-##IRQ
-###Brief
+## IRQ
+### Brief
 
 Now that the IDT is set up, the external interrupts have to handled.
 This can be achieved thanks to the Programmable Interrupt Controller which is
@@ -139,7 +137,7 @@ Chip reference: i8259A
 File: src/irq.c
 Header: inc/irq.h
 
-###Functions
+### Functions
 
 int	irq_init(uint8_t base);
 
@@ -164,8 +162,8 @@ void	irq_send_eoi(void);
 
 Description: Send EOI command to PIC (Hint: use OCW2)
 
-##Keyboard
-###Brief
+## Keyboard
+### Brief
 
 In order to test PIC configuration,
 you can write a simple keyboard driver which is hooked on the IRQ1.
@@ -174,7 +172,7 @@ Chip reference: i8042
 File: src/kb.c
 Header: inc/kb.h
 
-###Functions
+### Functions
 
 void	kb_init(void);
 
@@ -184,8 +182,8 @@ int	kb_get_key(void);
 
 Description: Returns the key code of last pressed key.
 
-##Programmable Interrupt Timer
-###Brief
+## Programmable Interrupt Timer
+### Brief
 
 Once your keyboard driver is working,
 let's try to get some periodic interrupts.
@@ -195,7 +193,7 @@ Chip reference: i8254
 File: src/pit.c
 Header: inc/pit.h
 
-###Functions
+### Functions
 
 int	pit_init(int freq);
 
@@ -210,15 +208,15 @@ int	pit_get_ticks(void);
 
 Description: Returns the number of ticks elapsed since the machine started.
 
-##Bonus: Serial
-###Brief
+## Bonus: Serial
+### Brief
 
 Try to improve your serial driver by handling UART interrupts.
 
 File: src/serial.c
 Header: inc/serial.h
 
-###Functions
+### Functions
 
 int	uart_init(void);
 
@@ -235,25 +233,24 @@ uint8_t	uart_recv(void);
 
 Description: Returns the last received character
 
-##Conclusion
+## Conclusion
 
 Corrections will take place in your computers. Have fun :)
 
-#Kernel Programming III - Kernel From Scratch
-##Introduction
+# Kernel Programming III - Kernel From Scratch
+## Introduction
 
 Here is the assigments for Kernel Programming III - Kernel From Scratch.
 
-To: halfr@lse.epita.fr, surply@lse.epita.fr`
 Subject: [KERNEL] LOGIN_X LOGIN_Y - KFS
 
 The specifications described below should be be considered as guidelines.
 This is not mandantory to perfectly fit this API but is highly recommended.
-##Summary
+## Summary
    Frame allocator
 
-##Frame allocator
-###Types
+## Frame allocator
+### Types
 
 typedef unsigned int	phys_t;
 
@@ -266,7 +263,7 @@ Description: A structure which describes a frame. It should contain:
 	     a reference counter
 	     a virtual address where is the frame is mapped
 
-###Functions
+### Functions
 
 void		init_frame_alloc(multiboot_info_t *multiboot);
 
@@ -299,8 +296,8 @@ struct frame*	phys_to_frame(phys_t addr);
 
 Description: Get frame data from physical address.
 
-##Page allocator
-Functions
+## Page allocator
+### Functions
 
 void*		alloc_pages(struct frame* pdbr, size_t n);
 
